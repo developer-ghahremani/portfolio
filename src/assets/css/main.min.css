@@ -1,0 +1,2 @@
+@keyframes slideLeft{0%{transform:translateX(100%)}100%{transform:translateX(0px)}}.slide-left{animation-name:slideLeft;animation-duration:1s}@tailwind base;@tailwind components;@tailwind utilities
+/*# sourceMappingURL=main.min.css.map */

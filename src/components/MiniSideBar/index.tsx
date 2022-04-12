@@ -1,40 +1,57 @@
-import { HomeIcon } from "components/icons";
-import { Link } from "react-router-dom";
-import React from "react";
+import { CallIcon, HomeIcon, ProfileIcon, WorkIcon } from "components/icons";
+import { Link, useLocation } from "react-router-dom";
+
+import { pageNames } from "constant";
 import { range } from "lodash";
 
-type Props = {};
+const MiniSideBar = () => {
+  const { pathname } = useLocation();
 
-const MiniSideBar = (props: Props) => {
   const options = [
     {
-      icon: <HomeIcon size={22} color="white" />,
+      icon: (
+        <HomeIcon
+          size={18}
+          color={pageNames.home === pathname ? "white" : "black"}
+        />
+      ),
       title: "home",
-      to: "/",
+      to: pageNames.home,
     },
     {
-      icon: <HomeIcon size={22} color="white" />,
+      icon: (
+        <ProfileIcon
+          size={18}
+          color={pageNames.aboutMe === pathname ? "white" : "black"}
+        />
+      ),
       title: "home",
-      to: "/",
+      to: pageNames.aboutMe,
     },
     {
-      icon: <HomeIcon size={22} color="white" />,
+      icon: (
+        <WorkIcon
+          size={18}
+          color={pageNames.resume === pathname ? "white" : "black"}
+        />
+      ),
       title: "home",
-      to: "/",
+      to: pageNames.resume,
     },
     {
-      icon: <HomeIcon size={22} color="white" />,
+      icon: (
+        <CallIcon
+          size={18}
+          color={pageNames.contactMe === pathname ? "white" : "black"}
+        />
+      ),
       title: "home",
-      to: "/",
-    },
-    {
-      icon: <HomeIcon size={22} color="white" />,
-      title: "home",
-      to: "/",
+      to: pageNames.contactMe,
     },
   ];
+
   return (
-    <div className=" bg-primary flex flex-col px-2 py-3 rounded-full">
+    <div className=" bg-primary-dark flex flex-col px-2 py-3 rounded-full items-center">
       {options.map((option, index, array) => (
         <div>
           <Link to={option.to}>{option.icon}</Link>

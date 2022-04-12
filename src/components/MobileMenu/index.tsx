@@ -17,7 +17,11 @@ const MobileMenu = ({ onClose }: Props) => {
   return (
     <div className="md:hidden bg-secondary slide-left absolute right-0 flex flex-col justify-between w-2/3 h-full">
       <div className="flex flex-col">
-        <CloseIcon size={28} className="self-end m-3" onClick={onClose} />
+        <CloseIcon
+          size={28}
+          className="self-end m-3 cursor-pointer"
+          onClick={onClose}
+        />
         <div className="flex flex-col">
           {[
             {

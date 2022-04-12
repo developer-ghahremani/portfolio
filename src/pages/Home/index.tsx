@@ -1,12 +1,14 @@
+import { MobileHeader, MobileMenu } from "components";
+
 import MiniSideBar from "components/MiniSideBar";
-import { MobileMenu } from "components";
 import { MoreVerticalIcon } from "components/icons";
+import { pageNames } from "constant";
 import { useI18Next } from "i18n";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-type Props = {};
-
-const Home = (props: Props) => {
+const Home = () => {
+  const navigate = useNavigate();
   const { t } = useI18Next();
   const [mobileMenu, setMobileMenu] = useState<boolean>(false);
 
@@ -15,26 +17,14 @@ const Home = (props: Props) => {
   };
 
   const handleAboutUs = () => {
-    console.log("residam");
+    navigate(pageNames.aboutMe);
   };
 
   return (
     <div className="w-full h-[100vh] relative">
       <div className="md:flex-row flex flex-col w-full h-[100vh] absolute">
         <div className="md:justify-center flex flex-col items-start justify-between flex-1 px-8">
-          <div className="md:hidden bg-secondary flex flex-row items-center justify-between w-full px-4 py-2 mt-2 bg-opacity-50 rounded-full">
-            <img
-              src={require("assets/images/me4.jpg")}
-              className="w-8 h-8 rounded-full"
-              alt=""
-            />
-            <MoreVerticalIcon
-              onClick={toggleMobileMenu}
-              className="cursor-pointer"
-              size={24}
-              color="black"
-            />
-          </div>
+          <MobileHeader onClickMenu={toggleMobileMenu} />
           <div className="flex flex-col items-start">
             <h3 className="text-3xl font-bold uppercase">
               {t("general.hiThere")}
@@ -69,7 +59,7 @@ const Home = (props: Props) => {
           /> */}
         </div>
       </div>
-      <div className="md:flex top-[30%] absolute right-0 items-center justify-end hidden w-auto px-4">
+      <div className="md:flex top-[35%] absolute right-0 items-center justify-end hidden w-auto px-4">
         <MiniSideBar />
       </div>
       {mobileMenu && <MobileMenu onClose={toggleMobileMenu} />}

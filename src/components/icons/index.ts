@@ -9,3 +9,5 @@ export { default as ProfileIcon } from "./Profile";
 export { default as WorkIcon } from "./Work";
 export { default as CallIcon } from "./Call";
 export { default as DevelopmentIcon } from "./Development";
+export { default as ComputerIcon } from "./Computer";
+export { default as CallOutlinedIcon } from "./CallOutlined";

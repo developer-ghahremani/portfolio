@@ -22,3 +22,4 @@ i18n.use(initReactI18next).init({
 
 export default i18n;
 export const useI18Next = () => useTranslation();
+export const getCurrentLanguage = () => (i18n.language === "fa" ? "fa" : "en");

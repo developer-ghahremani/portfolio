@@ -1,2 +1,2 @@
-@keyframes slideLeft{0%{transform:translateX(100%)}100%{transform:translateX(0px)}}.slide-left{animation-name:slideLeft;animation-duration:1s}@tailwind base;@tailwind components;@tailwind utilities
+@import url(f:\projects\rezaghahremani\src\assets\fonts\vazir\font-face-FD.css);@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");@keyframes slideLeft{0%{transform:translateX(100%)}100%{transform:translateX(0px)}}.slide-left{animation-name:slideLeft;animation-duration:1s}@tailwind base;@tailwind components;@tailwind utilities;.rtl{direction:rtl}.ltr{direction:ltr}
 /*# sourceMappingURL=main.min.css.map */

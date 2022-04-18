@@ -7,6 +7,10 @@ module.exports = {
         secondary: "#ddd",
         "primary-dark": "#ffba2f",
       },
+      fontFamily: {
+        vazir: "Vazir",
+        nunito: "Nunito",
+      },
     },
   },
   plugins: [],

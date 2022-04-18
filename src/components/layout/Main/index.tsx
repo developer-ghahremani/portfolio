@@ -1,21 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import { Link } from "react-router-dom";
 import MiniSideBar from "components/MiniSideBar";
 import MobileHeader from "components/MobileHeader";
 import MobileMenu from "components/MobileMenu";
 import Sidebar from "./Sidebar";
-import { pageNames } from "constant";
-import { range } from "lodash";
-import { useI18Next } from "i18n";
+import { getCurrentLanguage } from "i18n";
 
 type Props = { children: React.ReactNode; title: string };
 
 const MainLayout = ({ children, title }: Props) => {
   const [mobileMenu, setMobileMenu] = useState<boolean>(false);
+  const currentLanguage = getCurrentLanguage();
 
   const toggleMenu = () => {
     setMobileMenu((s) => !s);
+  };
+
+  useEffect(() => {
+    changeLanguage(currentLanguage);
+  }, [currentLanguage]);
+
+  const changeLanguage = (currentLanguage: "fa" | "en") => {
+    if (currentLanguage === "en") {
+      document.body.className = "ltr font-nunito";
+    } else if (currentLanguage === "fa") {
+      document.body.className = "rtl font-vazir";
+    }
   };
 
   return (
@@ -32,7 +42,10 @@ const MainLayout = ({ children, title }: Props) => {
           {children}
         </div>
       </div>
-      <div className="md:flex top-[35%] absolute right-0 items-center justify-end hidden w-auto px-4">
+      <div
+        className={`md:flex top-[35%] absolute ${
+          currentLanguage === "fa" ? "left-0" : "right-0"
+        } items-center justify-end hidden w-auto px-4`}>
         <MiniSideBar />
       </div>
       {mobileMenu && <MobileMenu onClose={toggleMenu} />}

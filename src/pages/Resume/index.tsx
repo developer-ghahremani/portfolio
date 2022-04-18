@@ -1,26 +1,19 @@
 import { MainLayout } from "components/layout";
-import React from "react";
-import { skills } from "constant";
 import { useI18Next } from "i18n";
 
 const Resume = () => {
   const { t } = useI18Next();
   return (
     <MainLayout title={t("general.resume")}>
-      <p className="font-bold text-2xl">{t("general.skills")}</p>
-      <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2 mt-4">
-        {skills.map((item) => (
-          <div key={item.title} className="flex flex-col items-center">
-            <div className="w-[5rem] h-[5rem] rounded-full flex justify-center items-center bg-white shadow-xl">
-              <img
-                src={item.image}
-                alt=""
-                className="w-[4rem] h-[4rem] object-contain"
-              />
-            </div>
-            <p className="text-xs font-bold uppercase mt-2">{item.title}</p>
-          </div>
-        ))}
+      <p className="text-2xl font-black">
+        {t("general.workExperienceAndProjects")}
+      </p>
+      <div className="lg:grid-cols-3 grid grid-cols-1">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
       </div>
     </MainLayout>
   );

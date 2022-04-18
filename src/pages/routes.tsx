@@ -2,6 +2,7 @@ import AboutMe from "./AboutMe";
 import ContactMe from "./ContactMe";
 import Home from "./Home";
 import Resume from "./Resume";
+import Skills from "./Skills";
 import { pageNames } from "constant";
 
 const routes: { path: string; element: JSX.Element }[] = [
@@ -20,6 +21,10 @@ const routes: { path: string; element: JSX.Element }[] = [
   {
     path: pageNames.resume,
     element: <Resume />,
+  },
+  {
+    path: pageNames.skills,
+    element: <Skills />,
   },
 ];
 

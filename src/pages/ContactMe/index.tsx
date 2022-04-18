@@ -21,22 +21,25 @@ const ContactMe = (props: Props) => {
         )}
 
         <div className="md:flex-row flex flex-col justify-between">
-          <div className="flex flex-row items-center">
+          <div className="lg:justify-start flex flex-row items-center justify-center">
             <ComputerIcon width={100} />
             <div className="flex flex-col items-center mx-2 font-semibold">
               <p>www.rezaghahremani.ir</p>
-              <a href="mailto:developer.ghahremani@gmail.com" target="_blank">
+              <a
+                href="mailto:developer.ghahremani@gmail.com"
+                target="_blank"
+                rel="noreferrer">
                 <p>developer.ghahremani@gmail.com</p>
               </a>
             </div>
           </div>
-          <div className="flex flex-row items-center">
+          <div className="lg:justify-start flex flex-row items-center justify-center">
             <CallOutlinedIcon width={100} />
             <div className="flex flex-col items-center mx-2 font-semibold">
-              <a href="callto:00989126894100" target="_blank">
+              <a href="callto:00989126894100" target="_blank" rel="noreferrer">
                 <p>+98 912 689 4100</p>
               </a>
-              <a href="callto:00989900880072" target="_blank">
+              <a href="callto:00989900880072" target="_blank" rel="noreferrer">
                 <p>+98 990 088 0072</p>
               </a>
             </div>

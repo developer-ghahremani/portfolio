@@ -1,9 +1,8 @@
 import { MobileHeader, MobileMenu } from "components";
+import { getCurrentLanguage, useI18Next } from "i18n";
 
 import MiniSideBar from "components/MiniSideBar";
-import { MoreVerticalIcon } from "components/icons";
 import { pageNames } from "constant";
-import { useI18Next } from "i18n";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -11,6 +10,7 @@ const Home = () => {
   const navigate = useNavigate();
   const { t } = useI18Next();
   const [mobileMenu, setMobileMenu] = useState<boolean>(false);
+  const currentLanguage = getCurrentLanguage();
 
   const toggleMobileMenu = () => {
     setMobileMenu((s) => !s);
@@ -59,9 +59,15 @@ const Home = () => {
           /> */}
         </div>
       </div>
-      <div className="md:flex top-[35%] absolute right-0 items-center justify-end hidden w-auto px-4">
+      <div
+        className={`md:flex top-[35%] absolute ${
+          currentLanguage === "fa" ? "left-0" : "right-0"
+        } items-center justify-end hidden w-auto px-4`}>
         <MiniSideBar />
       </div>
+      {/* <div className="md:flex top-[35%] absolute right-0 items-center justify-end hidden w-auto px-4">
+        <MiniSideBar />
+      </div> */}
       {mobileMenu && <MobileMenu onClose={toggleMobileMenu} />}
     </div>
   );

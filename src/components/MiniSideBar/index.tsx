@@ -32,10 +32,20 @@ const MiniSideBar = () => {
       icon: (
         <WorkIcon
           size={18}
+          color={pageNames.skills === pathname ? "white" : "black"}
+        />
+      ),
+      title: "skills",
+      to: pageNames.skills,
+    },
+    {
+      icon: (
+        <WorkIcon
+          size={18}
           color={pageNames.resume === pathname ? "white" : "black"}
         />
       ),
-      title: "home",
+      title: "resume",
       to: pageNames.resume,
     },
     {
@@ -45,13 +55,13 @@ const MiniSideBar = () => {
           color={pageNames.contactMe === pathname ? "white" : "black"}
         />
       ),
-      title: "home",
+      title: "contactMe",
       to: pageNames.contactMe,
     },
   ];
 
   return (
-    <div className=" bg-primary-dark flex flex-col px-2 py-3 rounded-full items-center">
+    <div className=" bg-primary-dark flex flex-col items-center px-2 py-3 rounded-full">
       {options.map((option, index, array) => (
         <div>
           <Link to={option.to}>{option.icon}</Link>

@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import i18n, { useI18Next } from "i18n";
 
-import React from "react";
 import { pageNames } from "constant";
 import { range } from "lodash";
 
@@ -26,7 +25,7 @@ const Sidebar = () => {
     <div className="md:flex hidden w-[25%] h-[100vh] bg-primary flex-col ">
       <img
         src={require("assets/images/me4.jpg")}
-        className="bg-secondary object-cover w-full h-56"
+        className="bg-secondary object-center w-full h-56"
         alt=""
       />
       {/* <div

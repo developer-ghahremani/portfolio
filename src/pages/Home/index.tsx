@@ -1,6 +1,7 @@
 import { MobileHeader, MobileMenu } from "components";
 import { getCurrentLanguage, useI18Next } from "i18n";
 
+import { ISlider } from "components/general";
 import MiniSideBar from "components/MiniSideBar";
 import { pageNames } from "constant";
 import { useNavigate } from "react-router-dom";
@@ -21,8 +22,8 @@ const Home = () => {
   };
 
   return (
-    <div className="w-full h-[100vh] relative">
-      <div className="md:flex-row flex flex-col w-full h-[100vh] absolute">
+    <div className="w-full h-[100vh] relative overflow-hidden">
+      <div className=" grid grid-cols-1 md:grid-cols-2 w-full h-[100vh] absolute">
         <div className="md:justify-center flex flex-col items-start justify-between flex-1 px-8">
           <MobileHeader onClickMenu={toggleMobileMenu} />
           <div className="flex flex-col items-start">
@@ -51,12 +52,34 @@ const Home = () => {
           </div>
           <div></div>
         </div>
-        <div className="md:flex flex-1 hidden bg-gray-400">
-          {/* <img
-            src={require("assets/images/me4.jpg")}
-            className="object-cover"
-            alt=""
-          /> */}
+        <div className="md:block relative hidden h-[100%]">
+          <div className="absolute w-full h-[100vh]">
+            <ISlider
+              items={[
+                {
+                  image:
+                    "https://s6.uupload.ir/files/pexels-thisisengineering-3861959_xidj.jpg",
+                },
+                {
+                  image:
+                    "https://s6.uupload.ir/files/pexels-markus-spiske-225250_600c.jpg",
+                },
+                {
+                  image:
+                    "https://s6.uupload.ir/files/pexels-christina-morillo-1181673_mmw7.jpg",
+                },
+                {
+                  image:
+                    "https://s6.uupload.ir/files/pexels-anete-lusina-4792728_zx70.jpg",
+                },
+                {
+                  image:
+                    "https://s6.uupload.ir/files/pexels-cottonbro-4709293_v3u5.jpg",
+                },
+              ]}
+            />
+          </div>
+          <div className="w-full from-white bg-gradient-to-r   h-[100vh] absolute"></div>
         </div>
       </div>
       <div

@@ -52,7 +52,7 @@ const Home = () => {
           </div>
           <div></div>
         </div>
-        <div className="md:block relative hidden h-[100%]">
+        <div className="md:block relative hidden h-[100%] test">
           <div className="absolute w-full h-[100vh]">
             <ISlider
               items={[

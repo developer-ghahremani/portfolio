@@ -15,6 +15,7 @@
     "lodash": "^4.17.21",
     "millify": "^4.0.0",
     "moment": "^2.29.3",
+    "moment-jalaali": "^0.9.6",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-i18next": "^11.16.5",
@@ -52,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "@types/moment-jalaali": "^0.7.5",
     "@types/react-modal": "^3.13.1",
     "@types/react-slick": "^0.23.8",
     "autoprefixer": "^10.4.4",

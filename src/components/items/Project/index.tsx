@@ -35,7 +35,8 @@ const ProjectItem = (props: Props) => {
         compnaies.find((t) => t.id === props.project.companyId)?.title[lang]
       }`}</p>
       <p className="mt-2 text-gray-600">
-        {props.project.shortDescription[lang]}
+        {props.project.description[lang] &&
+          `${props.project.description[lang].substring(0, 50)}...`}
       </p>
     </div>
   );

@@ -1,12 +1,12 @@
-import { IModal, ISlider } from "components/general";
+import { getCurrentLanguage, useI18Next } from "i18n";
 
 import { CloseIcon } from "components/icons";
+import { IModal } from "components/general";
 import { ImodalProps } from "components/general/Modal";
 import Project from "models/Project";
 import compnaies from "constant/companies";
-import { divide } from "lodash";
-import { getCurrentLanguage } from "i18n";
 import moment from "moment";
+import momentJ from "moment-jalaali";
 
 interface Props extends ImodalProps {
   project: Project;
@@ -15,6 +15,7 @@ interface Props extends ImodalProps {
 const ProjectModal = ({ project, ...props }: Props) => {
   const lang = getCurrentLanguage();
   const company = compnaies.find((item) => item.id === project.companyId);
+  const { t } = useI18Next();
   return (
     <IModal {...props}>
       <div className="flex flex-col h-full">
@@ -27,11 +28,25 @@ const ProjectModal = ({ project, ...props }: Props) => {
             <div className="flex flex-col items-start">
               <p className="text-[2rem] font-bold">{project.title[lang]}</p>
               <p className="bg-primary px-2 py-1 font-bold text-white text-[1rem]">
-                {`${moment(project.from).format("YYYY/MM/DD")} - ${moment(
-                  project.to
-                ).format("YYYY/MM/DD")}`}
+                {`${
+                  lang === "fa"
+                    ? momentJ(project.from)
+                        .add(-1, "month")
+                        .format("jYYYY/jMM/jDD")
+                    : moment(project.from).add(-1, "month").format("YYYY/MM/DD")
+                } - ${
+                  !project.to
+                    ? t("general.now")
+                    : lang === "fa"
+                    ? momentJ(project.to)
+                        .add(-1, "month")
+                        .format("jYYYY/jMM/jDD")
+                    : moment(project.to).add(-1, "month").format("YYYY/MM/DD")
+                }`}
               </p>
-              <p className="text-[.8rem]">{project.description[lang]}</p>
+              <p className="text-[.8rem] my-4 text-lg">
+                {project.description[lang]}
+              </p>
             </div>
             <div className="flex flex-col items-start mt-4">
               <div className=" flex items-center">
@@ -46,7 +61,7 @@ const ProjectModal = ({ project, ...props }: Props) => {
               </div>
             </div>
           </div>
-          <div className="relative flex-1 h-full">
+          <div className="md:flex relative flex-1 hidden h-full">
             <div className=" absolute w-full h-full overflow-x-hidden">
               {/* <ISlider
                 className=" h-ful w-full"
@@ -74,7 +89,11 @@ const ProjectModal = ({ project, ...props }: Props) => {
                 ]}
               /> */}
             </div>
-            <div className="bg-gradient-to-r to-primary from-transparent absolute z-20 w-full h-full" />
+            <div
+              className={`${
+                lang === "fa" ? "bg-gradient-to-l" : "bg-gradient-to-r"
+              }  to-primary from-transparent absolute z-20 w-full h-full`}
+            />
           </div>
         </div>
       </div>

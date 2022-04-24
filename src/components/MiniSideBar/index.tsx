@@ -1,4 +1,11 @@
-import { CallIcon, HomeIcon, ProfileIcon, WorkIcon } from "components/icons";
+import {
+  CallIcon,
+  CompanyIcon,
+  EducationIcon,
+  HomeIcon,
+  ProfileIcon,
+  WorkIcon,
+} from "components/icons";
 import { Link, useLocation } from "react-router-dom";
 
 import { pageNames } from "constant";
@@ -30,7 +37,7 @@ const MiniSideBar = () => {
     },
     {
       icon: (
-        <WorkIcon
+        <EducationIcon
           size={18}
           color={pageNames.skills === pathname ? "white" : "black"}
         />
@@ -47,6 +54,16 @@ const MiniSideBar = () => {
       ),
       title: "resume",
       to: pageNames.resume,
+    },
+    {
+      icon: (
+        <CompanyIcon
+          size={18}
+          color={pageNames.company === pathname ? "white" : "black"}
+        />
+      ),
+      title: "companies",
+      to: pageNames.company,
     },
     {
       icon: (

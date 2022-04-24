@@ -40,6 +40,7 @@ const MainLayout = ({ children, title }: Props) => {
             {title}
           </p>
           {children}
+          <div className="h-6"></div>
         </div>
       </div>
       <div

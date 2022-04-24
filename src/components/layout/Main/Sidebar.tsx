@@ -17,6 +17,7 @@ const Sidebar = () => {
     { title: t("general.aboutMe"), route: pageNames.aboutMe },
     { title: t("general.skills"), route: pageNames.skills },
     { title: t("general.resume"), route: pageNames.resume },
+    { title: t("general.companies"), route: pageNames.company },
 
     { title: t("general.contactWithMe"), route: pageNames.contactMe },
   ];

@@ -37,6 +37,14 @@ const MobileMenu = ({ onClose }: Props) => {
               title: t("general.resume"),
             },
             {
+              to: pageNames.skills,
+              title: t("general.skills"),
+            },
+            {
+              to: pageNames.company,
+              title: t("general.companies"),
+            },
+            {
               to: pageNames.contactMe,
               title: t("general.contactWithMe"),
             },

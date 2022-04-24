@@ -11,3 +11,5 @@ export { default as CallIcon } from "./Call";
 export { default as DevelopmentIcon } from "./Development";
 export { default as ComputerIcon } from "./Computer";
 export { default as CallOutlinedIcon } from "./CallOutlined";
+export { default as CompanyIcon } from "./Company";
+export { default as EducationIcon } from "./Education";

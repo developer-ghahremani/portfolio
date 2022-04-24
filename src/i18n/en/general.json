@@ -18,5 +18,8 @@
   "projects": "Projects",
   "companies": "Companies",
   "titleSkills": "Title skills",
-  "workExperienceAndProjects": "Work experience and projects"
+  "workExperienceAndProjects": "Work experience and projects",
+  "now": "Now",
+  "company": "Company",
+  "at": "At"
 }

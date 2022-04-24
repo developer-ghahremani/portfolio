@@ -4,6 +4,7 @@ const pageNames = {
   resume: "/resume",
   contactMe: "/contact-with-me",
   skills: "/skills",
+  company: "/company",
 };
 
 export default pageNames;

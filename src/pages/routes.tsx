@@ -1,4 +1,5 @@
 import AboutMe from "./AboutMe";
+import Company from "./Company";
 import ContactMe from "./ContactMe";
 import Home from "./Home";
 import Resume from "./Resume";
@@ -25,6 +26,10 @@ const routes: { path: string; element: JSX.Element }[] = [
   {
     path: pageNames.skills,
     element: <Skills />,
+  },
+  {
+    path: pageNames.company,
+    element: <Company />,
   },
 ];
 

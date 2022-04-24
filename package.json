@@ -14,10 +14,12 @@
     "i18next": "^21.6.15",
     "lodash": "^4.17.21",
     "millify": "^4.0.0",
+    "moment": "^2.29.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-i18next": "^11.16.5",
     "react-icons": "^4.3.1",
+    "react-modal": "^3.14.4",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "react-slick": "^0.29.0",
@@ -50,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-modal": "^3.13.1",
     "@types/react-slick": "^0.23.8",
     "autoprefixer": "^10.4.4",
     "postcss": "^8.4.12",

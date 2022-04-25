@@ -1,3 +1,4 @@
+import "assets/fonts/vazir/font-face-FD.css";
 import "./assets/css/main.min.css";
 import "i18n";
 import "slick-carousel/slick/slick.css";

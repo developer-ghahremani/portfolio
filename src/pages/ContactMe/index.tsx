@@ -1,12 +1,42 @@
-import { CallOutlinedIcon, ComputerIcon } from "components/icons";
+import {
+  CallOutlinedIcon,
+  ComputerIcon,
+  FacebookIcon2,
+  InstagramIcon2,
+  TelegramIcon2,
+  WhatsAppIcon2,
+} from "components/icons";
 import { getCurrentLanguage, useI18Next } from "i18n";
 
 import { MainLayout } from "components/layout";
+import { socialLinks } from "constant";
 
 type Props = {};
 
 const ContactMe = (props: Props) => {
   const { t } = useI18Next();
+  const options: { title: string; icon: JSX.Element; link: string }[] = [
+    {
+      icon: <InstagramIcon2 width={25} />,
+      title: "instagram",
+      link: socialLinks.instagram,
+    },
+    {
+      icon: <FacebookIcon2 width={25} />,
+      title: "facebook",
+      link: socialLinks.facebook,
+    },
+    {
+      icon: <WhatsAppIcon2 width={25} />,
+      title: "whatsapp",
+      link: socialLinks.whatsapp,
+    },
+    {
+      icon: <TelegramIcon2 width={25} />,
+      title: "telegram",
+      link: socialLinks.telegram,
+    },
+  ];
 
   return (
     <MainLayout title={t("general.contactWithMe")}>
@@ -46,9 +76,23 @@ const ContactMe = (props: Props) => {
           </div>
         </div>
 
-        <p className=" text-2xl font-black tracking-wider text-center">
-          {t("general.thanksForAttention")}
-        </p>
+        <div className="flex flex-col items-center">
+          <div className="bg-primary flex justify-center px-4 py-2 rounded-full">
+            {options.map((option) => (
+              <a
+                className="hover:scale-[2] mx-4 duration-500 cursor-pointer"
+                href={option.link}
+                key={option.title}
+                target="_blank"
+                rel="noopener noreferrer">
+                {option.icon}
+              </a>
+            ))}
+          </div>
+          <p className=" text-2xl font-black tracking-wider text-center">
+            {t("general.thanksForAttention")}
+          </p>
+        </div>
       </div>
     </MainLayout>
   );

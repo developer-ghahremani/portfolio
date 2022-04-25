@@ -1,9 +1,13 @@
 export { default as HomeIcon } from "./Home";
 export { default as MoreVerticalIcon } from "./MoreVertical";
 export { default as CloseIcon } from "./Close";
+export { default as InstagramIcon2 } from "./Instagram2";
 export { default as InstagramIcon } from "./Instagram";
+export { default as WhatsAppIcon2 } from "./WhatsApp2";
 export { default as WhatsAppIcon } from "./WhatsApp";
+export { default as FacebookIcon2 } from "./Facebook2";
 export { default as FacebookIcon } from "./Facebook";
+export { default as TelegramIcon2 } from "./Telegram2";
 export { default as TelegramIcon } from "./Telegram";
 export { default as ProfileIcon } from "./Profile";
 export { default as WorkIcon } from "./Work";

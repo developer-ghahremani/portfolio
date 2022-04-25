@@ -1,6 +1,7 @@
 import { MobileHeader, MobileMenu } from "components";
 import { getCurrentLanguage, useI18Next } from "i18n";
 
+import { Helmet } from "react-helmet";
 import { ISlider } from "components/general";
 import MiniSideBar from "components/MiniSideBar";
 import { pageNames } from "constant";
@@ -23,6 +24,9 @@ const Home = () => {
 
   return (
     <div className="w-full h-[100vh] relative overflow-hidden">
+      <Helmet>
+        <title>{t("general.myName")}</title>
+      </Helmet>
       <div className=" grid grid-cols-1 md:grid-cols-2 w-full h-[100vh] absolute">
         <div className="md:justify-center flex flex-col items-start justify-between flex-1 px-8">
           <MobileHeader onClickMenu={toggleMobileMenu} />

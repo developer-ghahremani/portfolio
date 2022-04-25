@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { getCurrentLanguage, useI18Next } from "i18n";
 
+import { Helmet } from "react-helmet";
 import MiniSideBar from "components/MiniSideBar";
 import MobileHeader from "components/MobileHeader";
 import MobileMenu from "components/MobileMenu";
 import Sidebar from "./Sidebar";
-import { getCurrentLanguage } from "i18n";
+import { useLocation } from "react-router-dom";
 
 type Props = { children: React.ReactNode; title: string };
 
 const MainLayout = ({ children, title }: Props) => {
   const [mobileMenu, setMobileMenu] = useState<boolean>(false);
   const currentLanguage = getCurrentLanguage();
+  const { pathname } = useLocation();
+  const { t } = useI18Next();
 
   const toggleMenu = () => {
     setMobileMenu((s) => !s);
@@ -30,6 +34,11 @@ const MainLayout = ({ children, title }: Props) => {
 
   return (
     <div className="w-full h-[100vh] flex relative">
+      <Helmet>
+        <title>
+          {t("general.myName")} - {t(`general.${pathname.replace("/", "")}`)}
+        </title>
+      </Helmet>
       <Sidebar />
       <div className="flex-1">
         <div className="px-8">

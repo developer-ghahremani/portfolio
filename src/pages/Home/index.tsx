@@ -43,11 +43,7 @@ const Home = () => {
             <h5 className="bg-primary px-1 mt-2 font-bold text-black rounded-sm">
               {t("general.myJob")}
             </h5>
-            <p className="my-4 text-gray-500">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Blanditiis rem et, corrupti eum aut facere asperiores a. Eos,
-              natus excepturi?
-            </p>
+            <p className="my-4 text-gray-500">{t("general.welcomeSlug")}</p>
             <button
               className="bg-primary px-4 py-3 font-bold text-white rounded-full"
               onClick={handleAboutUs}>

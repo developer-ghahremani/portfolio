@@ -24,15 +24,18 @@ const ProjectItem = (props: Props) => {
       <p className="bg-primary group-hover:text-primary group-hover:bg-white px-2 py-1 text-sm font-bold text-white duration-1000 rounded-md">
         {`${moment(props.project.from).add(-1, "month").format("YYYY/MM")} - ${
           !!props.project.to
-            ? moment(props.project.to).add(-1, "month").format("YYYY/MM/DD")
+            ? moment(props.project.to).add(-1, "month").format("YYYY/MM")
             : t("general.now")
         }
           `}
       </p>
-      <p className="mt-2 font-bold">{`${props.project.jobTitle[lang]} ${t(
-        "general.at"
-      )} ${
-        compnaies.find((t) => t.id === props.project.companyId)?.title[lang]
+      <p className="mt-2 font-bold">{`${
+        !props.project.companyId ? t("general.freelancer") : ""
+      } ${props.project.jobTitle[lang]} ${
+        props.project.companyId ? t("general.at") : ""
+      } ${
+        compnaies.find((t) => t.id === props.project.companyId)?.title[lang] ||
+        ""
       }`}</p>
       <p className="mt-2 text-gray-600">
         {props.project.description[lang] &&

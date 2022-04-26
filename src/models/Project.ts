@@ -1,3 +1,5 @@
+import { Tag } from "./Tag";
+
 interface Project {
   id: number;
   jobTitle: { en: string; fa: string };
@@ -6,8 +8,9 @@ interface Project {
   to?: Date;
   // shortDescription: { en: string; fa: string };
   description: { en: string; fa: string };
-  companyId: number;
+  companyId?: number;
   images: { image: string; title?: string }[];
+  tags?: Tag[];
 }
 
 export default Project;

@@ -25,3 +25,21 @@
   opacity: 0;
   transform: translateY(-100px);
 }
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slideUp;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+}

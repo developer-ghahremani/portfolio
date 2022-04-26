@@ -1,4 +1,5 @@
 import ProjectModel from "models/Project";
+import tags from "./tags";
 
 const projects: ProjectModel[] = [
   {
@@ -117,6 +118,18 @@ const projects: ProjectModel[] = [
       fa: "پیاده سازی بخش فرانت مربوط سایت ads.ratin.agency جهت برقراری تعامل سازنده بین تبلیغ دهندگان و توسعه دهندگان اپلیکیشن ها.",
     },
     images: [{ image: "", title: "" }],
+    tags: [
+      tags.javascript,
+      tags.react,
+      tags.jsx,
+      tags.sass,
+      tags.bootstrap,
+      tags.reactRouterDom,
+      tags.redux,
+      tags.reduxThunk,
+      tags.axios,
+      tags.antD,
+    ],
   },
   {
     id: 8,
@@ -137,6 +150,18 @@ const projects: ProjectModel[] = [
       fa: "پیاده سازی فرانت سایت crm.ratin.aagency ، محصول شرکت راتین برای مدیریت و رصد کردن مشتریان شرکت ها. امکان ساخت محصول، ساخت تسک، افزودن فروشنده، ساخت فاکتور و پیش فاکتور برای هر پنل امکان پذیر است.",
     },
     images: [{ image: "", title: "" }],
+    tags: [
+      tags.javascript,
+      tags.react,
+      tags.jsx,
+      tags.sass,
+      tags.bootstrap,
+      tags.reactRouterDom,
+      tags.redux,
+      tags.reduxThunk,
+      tags.axios,
+      tags.antD,
+    ],
   },
   {
     id: 9,
@@ -151,12 +176,21 @@ const projects: ProjectModel[] = [
     from: new Date(2021, 1, 20),
     to: new Date(2021, 4, 21),
     companyId: 3,
-
     description: {
-      en: "",
+      en: "I work as a freelancer on a question and answer game project. (The game process is like Trivia Crack 2.) In this project, I used a socket and implemented all the designs that fit a game. The purpose of the project is to use for the iOS user.",
       fa: "به صورت فریلنسر روی پروژه بازی سوال و جوابی کار می کنم.(فرآیند بازی، مثل بازیTrivia Crack 2 است.) در این پروژه از سوکت استفاده کردم و تمامی طراحی های متناسب با یک بازی را پیاده سازی نمودم. هدف پروژه، استفاده برای کاربر IOS است.",
     },
     images: [{ image: "", title: "" }],
+    tags: [
+      tags.javascript,
+      tags.react,
+      tags.jsx,
+      tags.sass,
+      tags.bootstrap,
+      tags.reactRouterDom,
+      tags.axios,
+      tags.socketIoClient,
+    ],
   },
   // {
   //   id: 10,
@@ -186,17 +220,29 @@ const projects: ProjectModel[] = [
       fa: "اپلیکیشن میروریم",
     },
     from: new Date(2021, 4, 21),
-    to: new Date(2022, 3, 20),
+    to: new Date(2021, 8, 23),
     companyId: 6,
-
     description: {
       en: "A user task management project with the following capabilities:For each registered task, you will be able to chat about that task. Each task can have checklists, attached files, and assigned users. In this program, the user can record how he feels about his audience, and also see how others feel about him.",
       fa: `پروژه مدیریت کننده تسک های کاربران با قابلیت های زیر:
-    برای هر تسک ثبت شده، امکان چت در مورد آن تسک مهیا خواهد شد.
-    هر تسک می تواند دارای چک لیست، فایل های attach شده و کاربران assign شده باشد.
-    کاربر در این برنامه می تواند احساس خود به مخاطبینش را ثبت کند، و احساسات دیگران به خود را نیز مشاهده نماید.`,
+      برای هر تسک ثبت شده، امکان چت در مورد آن تسک مهیا خواهد شد.
+      هر تسک می تواند دارای چک لیست، فایل های attach شده و کاربران assign شده باشد.
+      کاربر در این برنامه می تواند احساس خود به مخاطبینش را ثبت کند، و احساسات دیگران به خود را نیز مشاهده نماید.`,
     },
     images: [{ image: "", title: "" }],
+    tags: [
+      tags.javascript,
+      tags.react,
+      tags.jsx,
+      tags.reactNative,
+      tags.expo,
+      tags.reactNavigation,
+      tags.redux,
+      tags.reduxThunk,
+      tags.reduxPersist,
+      tags.axios,
+      tags.socketIoClient,
+    ],
   },
   {
     id: 12,
@@ -208,8 +254,8 @@ const projects: ProjectModel[] = [
       en: "Peteman",
       fa: "سایت پت من",
     },
-    from: new Date(2021, 4, 21),
-    to: new Date(2022, 3, 20),
+    from: new Date(2021, 7, 7),
+    to: new Date(2021, 10, 22),
     companyId: 6,
 
     description: {
@@ -217,6 +263,18 @@ const projects: ProjectModel[] = [
       fa: `مشاهده مقالات در حوزه نگهداری و سلامت حیوانات خانگی با قابلیت مشاهده محصولات پت شاپ های ثبت نام شده. اپلیکیشن با قابلیت امکان ویزیت آنلاین، چت با دام پزشک و فروشگاه محصولات حیوانات خانگی در حال پیاده سازی می باشد.`,
     },
     images: [{ image: "", title: "" }],
+    tags: [
+      tags.javascript,
+      tags.react,
+      tags.jsx,
+      tags.sass,
+      tags.bootstrap,
+      tags.nextJS,
+      tags.redux,
+      tags.reduxThunk,
+      tags.reduxPersist,
+      tags.axios,
+    ],
   },
   {
     id: 13,
@@ -228,7 +286,7 @@ const projects: ProjectModel[] = [
       en: "Mirorup",
       fa: "اپلیکیشن میرورآپ",
     },
-    from: new Date(2021, 4, 21),
+    from: new Date(2021, 9, 21),
     to: new Date(2022, 3, 20),
     companyId: 6,
 
@@ -237,9 +295,52 @@ const projects: ProjectModel[] = [
       fa: `ترکیبی از اپکیلیشن کتاب و فضای اجتماعی. فضا به گونه ای است که کاربر امکان اظهار نظر در مورد هر پاراگرافی که می خواند را دارد. نظرات بین دوستان مخاطب به اشتراک گذاشته می شود و کاربر می تواند در مورد هر پاراگراف هر کتاب، با دوستان خود به گفت و گو بپردازد`,
     },
     images: [{ image: "", title: "" }],
+    tags: [
+      tags.javascript,
+      tags.react,
+      tags.jsx,
+      tags.reactNative,
+      tags.expo,
+      tags.reactNavigation,
+      tags.redux,
+      tags.reduxThunk,
+      tags.reduxPersist,
+      tags.axios,
+      tags.socketIoClient,
+    ],
   },
   {
     id: 14,
+    jobTitle: {
+      en: "Front End Developer (React Js)",
+      fa: "برنامه نویس فرانت اند",
+    },
+    title: {
+      en: "Rac Ceramics",
+      fa: "سایت رک سرامیک",
+    },
+    from: new Date(2022, 2, 15),
+    to: new Date(2022, 4, 9),
+
+    description: {
+      en: "Rak ceramics site. Introducing the company's products, introducing completed projects and introducing branches.",
+      fa: `سایت رک سرامیک. معرفی محصولات شرکت، معرفی پروژه های انجام شده و معرفی شعب.`,
+    },
+    images: [{ image: "", title: "" }],
+    tags: [
+      tags.typescript,
+      tags.react,
+      tags.jsx,
+      tags.sass,
+      tags.tailwindCSS,
+      tags.redux,
+      tags.reduxThunk,
+      tags.axios,
+      tags.reactRouterDom,
+    ],
+  },
+  {
+    id: 15,
     jobTitle: {
       en: "Front End Developer (React Js)",
       fa: "برنامه نویس فرانت اند",
@@ -249,15 +350,26 @@ const projects: ProjectModel[] = [
       fa: "سایت باجه 724",
     },
     from: new Date(2021, 8, 23),
-    // to: new Date(),
     companyId: 7,
-
     description: {
       en: "",
       fa: `مدیریت اطلاعات پرسنلی جهاد نصر کرمان
     شامل اطلاعات پرسنلی افراد، نمایش اطلاعات بیمه ای، نمایش لیست ماشین آلات هلدینگ، سیستم ساخت اتوماتیک تسک ها، بازرسی در راستای استاندارد های HSE افراد و ثبت آن در سامانه`,
     },
     images: [{ image: "", title: "" }],
+    tags: [
+      tags.javascript,
+      tags.react,
+      tags.jsx,
+      tags.sass,
+      tags.bootstrap,
+      tags.reactRouterDom,
+      tags.antD,
+      tags.redux,
+      tags.reduxPersist,
+      tags.reduxThunk,
+      tags.axios,
+    ],
   },
 ];
 

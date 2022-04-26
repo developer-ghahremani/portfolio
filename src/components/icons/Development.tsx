@@ -3,7 +3,11 @@ import * as React from "react";
 import { SVGProps } from "react";
 
 const Development = (props: SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    // width={100}
+    viewBox="0 0 60 60"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}>
     <defs>
       <style>{".cls-1{fill:none;}.cls-2{fill:#3d3d63;}"}</style>
     </defs>

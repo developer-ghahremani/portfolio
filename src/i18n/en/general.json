@@ -23,5 +23,14 @@
   "company": "Company",
   "at": "At",
   "about-me": "About Me",
-  "contact-with-me": "Contact with me"
+  "contact-with-me": "Contact with me",
+  "welcomeSlug": "Welcome to my website. I am sincerely glad to see you here and to be able to introduce myself to you. Welcome to my website. I am sincerely glad to see you here and I can share my experiences and knowledge with you. I started learning programming knowledge in 2017, I entered the job market in 2018, and now I am following MERN stack. (Mongo, Express, React, Node)",
+  "aboutUsSlug": "In my opinion, programming is an important and extremely attractive knowledge. Today, with the development of various sites and applications, it seems difficult to live without using them. People like me and my friends need to work to maintain, update and develop these programs. We want users of sites and applications to have a good experience of our products and make life easier for them. From online stores to social apps, our products all strive to improve the quality of life.",
+  "beforeSartingTheProject": "Before starting the project",
+  "beforeSartingTheProjectSlug": "The most important issue before starting a project is to choose the technology required for the project in accordance with the graphic designs and the needs of the client.",
+  "afterSartingTheProject": "After selecting the technology and framework",
+  "afterSartingTheProjectSlug": "Designing the basic components of the project in accordance with the needs of the project is an important and fundamental issue.",
+  "duringTheProject": "During the project",
+  "duringTheProjectSlug": "Interact with other teams and get the client's opinion during the project.",
+  "freelancer": "Freelancer"
 }

@@ -44,12 +44,12 @@ const MainLayout = ({ children, title }: Props) => {
         <div className="px-8">
           <MobileHeader onClickMenu={toggleMenu} />
         </div>
-        <div className="bg-white md:bg-secondary px-8 md:px-14 pt-8 h-[100vh] overflow-y-scroll">
+        <div className="bg-white md:bg-secondary px-8 md:px-14 pt-8 h-[100vh] overflow-y-auto">
           <p className="text-7xl p-4 mb-4 font-black text-center border-2 border-black border-dotted">
             {title}
           </p>
           {children}
-          <div className="h-6"></div>
+          {/* <div className="h-6"></div> */}
         </div>
       </div>
       <div

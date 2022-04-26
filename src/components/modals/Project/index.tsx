@@ -47,19 +47,37 @@ const ProjectModal = ({ project, ...props }: Props) => {
               <p className="text-[.8rem] my-4 text-lg">
                 {project.description[lang]}
               </p>
-            </div>
-            <div className="flex flex-col items-start mt-4">
-              <div className=" flex items-center">
-                <img
-                  src={company?.logo}
-                  className="w-16 h-16 rounded-full"
-                  alt=""
-                />
-                <p className="text-[2rem] font-bold mx-4">
-                  {company?.title[lang]}
-                </p>
+
+              <div className="flex flex-wrap">
+                {project.tags?.map((tag, index) => (
+                  <a
+                    href={tag.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={index}
+                    className="bg-primary slide-up hover:scale-125 px-2 py-1 mx-2 my-1 duration-700 ease-in-out rounded-full"
+                    style={{ animationDelay: `${index * 150}ms` }}>
+                    <p className="text-sm font-bold text-white">
+                      {tag.title[lang]}
+                    </p>
+                  </a>
+                ))}
               </div>
             </div>
+            {project.companyId && (
+              <div className="flex flex-col items-start mt-4">
+                <div className=" flex items-center">
+                  <img
+                    src={company?.logo}
+                    className="w-16 h-16 rounded-full"
+                    alt=""
+                  />
+                  <p className="text-[2rem] font-bold mx-4">
+                    {company?.title[lang]}
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
           <div className="md:flex relative flex-1 hidden h-full">
             <div className=" absolute w-full h-full overflow-x-hidden">

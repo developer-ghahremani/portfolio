@@ -26,7 +26,7 @@ const Sidebar = () => {
     <div className="md:flex hidden w-[25%] h-[100vh] bg-primary flex-col ">
       <img
         src={require("assets/images/me4.jpg")}
-        className="bg-secondary object-center w-full h-56"
+        className="bg-secondary xl:hidden w-full h-64"
         alt=""
       />
       {/* <div

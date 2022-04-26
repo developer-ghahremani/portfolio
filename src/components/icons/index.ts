@@ -17,3 +17,4 @@ export { default as ComputerIcon } from "./Computer";
 export { default as CallOutlinedIcon } from "./CallOutlined";
 export { default as CompanyIcon } from "./Company";
 export { default as EducationIcon } from "./Education";
+export { default as MenuIcon } from "./Menu";

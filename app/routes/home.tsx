@@ -1,5 +1,6 @@
 import AppInput from "~/components/input.component";
 import type { Route } from "./+types/home";
+import Hero from "~/components/home/hero.section";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,7 +10,11 @@ export function meta({}: Route.MetaArgs) {
 }
 
 const Home = () => {
-  return <AppInput />;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 };
 
 export default Home;

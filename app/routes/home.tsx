@@ -1,6 +1,6 @@
-import AppInput from "~/components/input.component";
-import type { Route } from "./+types/home";
+import About from "~/components/home/about.section";
 import Hero from "~/components/home/hero.section";
+import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -13,6 +13,7 @@ const Home = () => {
   return (
     <>
       <Hero />
+      <About />
     </>
   );
 };

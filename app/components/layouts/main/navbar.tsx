@@ -25,8 +25,8 @@ const navLinks = [
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   return (
-    <header className="fixed top-0 right-0 left-0 bg-transparent py-5">
-      <nav className="container mx-auto px-6 flex items-center justify-between border">
+    <header className="fixed top-0 right-0 left-0 bg-transparent py-5 z-50">
+      <nav className="container mx-auto px-6 flex items-center justify-between">
         <Link to="#" className="text-xl font-bold tracking-tight hover:text-primary">
           RG <span className="text-primary">.</span>
         </Link>

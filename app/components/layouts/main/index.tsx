@@ -1,5 +1,6 @@
 import { Outlet } from "react-router";
 import Navbar from "./navbar";
+import Footer from "./footer";
 
 type Props = {};
 
@@ -10,6 +11,7 @@ const MainLayout = (props: Props) => {
       <main>
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 };

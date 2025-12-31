@@ -1,29 +1,12 @@
 import { Menu, X } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
 import AppButton from "~/components/button";
-
-const navLinks = [
-  {
-    label: "About",
-    to: "#about",
-  },
-  {
-    label: "Project",
-    to: "#project",
-  },
-  {
-    label: "Experiences",
-    to: "#Experiences",
-  },
-  {
-    label: "Testimonial",
-    to: "#Testimonial",
-  },
-];
+import { navLinks } from "~/utils/constants";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  useEffect(() => {}, []);
   return (
     <header className="fixed top-0 right-0 left-0 bg-transparent py-5 z-50">
       <nav className="container mx-auto px-6 flex items-center justify-between">

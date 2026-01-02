@@ -2,17 +2,15 @@ import { Link } from "react-router";
 import SocialLinks from "~/components/social-links";
 import { navLinks } from "~/utils/constants";
 
-type Props = {};
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center container mx-auto py-8 gap-4 px-6">
+    <div className="flex flex-col  md:flex-row justify-between items-center md:items-end container mx-auto py-8 gap-4 px-6">
       <div className="flex flex-col items-center md:items-start">
         <p className="text-lg font-black">RG</p>
         <p className="text-sm text-muted-foreground">@ 2025 Reza Ghahremani. All rights reserved</p>
       </div>
 
-      <div className="flex md:gap-2 gap-1">
+      <div className="flex md:gap-2 gap-4 self-center">
         {navLinks.map((item, index) => (
           <Link
             key={item.label + item.to + index}

@@ -19,7 +19,7 @@ const Hero = (props: Props) => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(40)].map((_, index) => (
           <div
-            // key={"custom_dot" + index}
+            key={"custom_dot" + index}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60 bg-primary"
             style={{
               left: `${Math.random() * 100}%`,

@@ -6,9 +6,20 @@ import { navLinks } from "~/utils/constants";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-  useEffect(() => {}, []);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  const scrollEventListener = () => {
+    setIsScrolled(window.scrollY > 80);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollEventListener);
+    return () => window.removeEventListener("scroll", scrollEventListener);
+  }, []);
+
   return (
-    <header className="fixed top-0 right-0 left-0 bg-transparent py-5 z-50">
+    <header
+      className={`fixed top-0 right-0 left-0 transition-all duration-300 ${isScrolled ? "glass-strong py-3" : "bg-transparent py-5"} z-50`}>
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <Link to="#" className="text-xl font-bold tracking-tight hover:text-primary">
           RG <span className="text-primary">.</span>

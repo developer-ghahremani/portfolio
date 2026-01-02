@@ -10,7 +10,7 @@ const Footer = () => {
         <p className="text-sm text-muted-foreground">@ 2025 Reza Ghahremani. All rights reserved</p>
       </div>
 
-      <div className="flex md:gap-2 gap-4 self-center">
+      <div className="flex md:gap-6 gap-3 self-center">
         {navLinks.map((item, index) => (
           <Link
             key={item.label + item.to + index}

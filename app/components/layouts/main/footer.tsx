@@ -4,7 +4,7 @@ import { navLinks } from "~/utils/constants";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col  md:flex-row justify-between items-center md:items-end container mx-auto py-8 gap-4 px-6">
+    <div className="flex flex-col  md:flex-row justify-between items-center md:items-end container mx-auto py-8 gap-4 px-6 px-3">
       <div className="flex flex-col items-center md:items-start">
         <p className="text-lg font-black">RG</p>
         <p className="text-sm text-muted-foreground">@ 2025 Reza Ghahremani. All rights reserved</p>

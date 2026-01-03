@@ -1,8 +1,6 @@
 import { ArrowRight, Download } from "lucide-react";
+import { AnimatedBorderButton } from "../animated-border-button";
 import AppButton from "../button";
-import GithubIcon from "../icons/github";
-import TwitterIcon from "../icons/twitter";
-import { AnimatedBorderButton } from "../animated_border_button";
 import SocialLinks from "../social-links";
 
 type Props = {};

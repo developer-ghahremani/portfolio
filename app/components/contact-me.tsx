@@ -1,10 +1,28 @@
-import { useState } from "react";
+import { Formik, type FormikHelpers } from "formik";
+import { Send } from "lucide-react";
+import * as yup from "yup";
 import AppInput from "./input";
+import AppButton from "./button";
 
-type Props = {};
+interface ContactFormProps {
+  name: string;
+  email: string;
+  message: string;
+}
 
-const ContactMe = (props: Props) => {
-  const [name, setName] = useState<string>("");
+const ContactMe = () => {
+  const validationSchema = yup.object({
+    name: yup.string().required(),
+    email: yup.string().required().email(),
+    message: yup.string().required().min(5).max(200),
+  });
+  const handleSubmitForm = (
+    values: { name: string; email: string; message: string },
+    formikHelpers: FormikHelpers<ContactFormProps>
+  ) => {
+    console.log("Residam");
+  };
+
   return (
     <div className="container py-32 mx-auto px-3 relative overflow-hidden">
       {/* <div className="absolute top-0 left-0 w-full h-full">
@@ -24,20 +42,55 @@ const ContactMe = (props: Props) => {
       </div>
       <div className="flex gap-4 flex-col lg:flex-row mt-16">
         <div className="glass p-8 rounded-3xl border border-primary/30 flex-1">
-          <div className="flex flex-col gap-4 flex-1">
-            {/* <div className="glass p-8 rounded-3xl border border-primary/30 flex-1"></div>
-          <div className="glass p-8 rounded-3xl border border-primary/30 flex-1"></div> */}
-            <AppInput
-              title="Name"
-              placeholder="Your Name..."
-              inputProps={{
-                onChange: (e) => {
-                  setName(e.target.value);
-                },
-              }}
-            />
-            <p>{name}</p>
-          </div>
+          <Formik<ContactFormProps>
+            onSubmit={handleSubmitForm}
+            validationSchema={validationSchema}
+            initialValues={{ email: "", message: "", name: "" }}>
+            {({ handleChange, handleSubmit, values, errors }) => (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1">
+                <AppInput
+                  title="Name"
+                  placeholder="Your Name..."
+                  error={errors.name}
+                  inputProps={{
+                    name: "name",
+                    onChange: handleChange,
+                  }}
+                />
+
+                <AppInput
+                  title="Email"
+                  error={errors.email}
+                  placeholder="Your Email..."
+                  inputProps={{
+                    name: "email",
+                    onChange: handleChange,
+                  }}
+                />
+                <AppInput
+                  title="Message"
+                  error={errors.message}
+                  placeholder="Your Message..."
+                  inputProps={{
+                    name: "message",
+                    onChange: handleChange,
+                    style: { minHeight: "200px" },
+                  }}
+                />
+                <AppButton buttonElements={{ type: "submit" }}>
+                  {/* <button buttonElements={{ type: "submit" }}> */}
+                  <div className="flex items-center gap-2">
+                    <p>Submit Message</p>
+                    <Send size={20} />
+                  </div>
+                </AppButton>
+              </form>
+            )}
+          </Formik>
+        </div>
+        <div className="flex flex-col gap-4 flex-1">
+          <div className="glass p-8 rounded-3xl border border-primary/30 flex-1"></div>
+          <div className="glass p-8 rounded-3xl border border-primary/30 flex-1"></div>
         </div>
       </div>
     </div>

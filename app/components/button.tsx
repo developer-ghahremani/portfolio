@@ -1,8 +1,13 @@
-import { type ReactNode } from "react";
+import { type ButtonHTMLAttributes, type ReactNode } from "react";
 
-type Props = { className?: string; size?: "default" | "sm" | "lg"; children: ReactNode };
+interface Props {
+  className?: string;
+  size?: "default" | "sm" | "lg";
+  children: ReactNode;
+  buttonElements?: ButtonHTMLAttributes<{}>;
+}
 
-const AppButton = ({ className, size = "default", children, ...props }: Props) => {
+const AppButton = ({ className, size = "default", children, buttonElements }: Props) => {
   const baseClasses =
     "relative cursor-pointer overflow-hidden rounded-full font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25";
   const sizeClasses: { sm: string; default: string; lg: string } = {
@@ -12,7 +17,7 @@ const AppButton = ({ className, size = "default", children, ...props }: Props) =
   };
   const classes = `${baseClasses} ${sizeClasses[size]} ${className}`;
   return (
-    <button className={classes} {...props}>
+    <button className={classes} {...buttonElements}>
       <span className="relative flex items-center justify-center gap-2">{children}</span>
     </button>
   );

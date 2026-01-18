@@ -1,8 +1,9 @@
 import { Formik, type FormikHelpers } from "formik";
-import { Send } from "lucide-react";
+import { Copy, Send, Mail, Phone, MapPin } from "lucide-react";
 import * as yup from "yup";
 import AppInput from "./input";
 import AppButton from "./button";
+import { toast } from "react-toastify";
 
 interface ContactFormProps {
   name: string;
@@ -16,11 +17,17 @@ const ContactMe = () => {
     email: yup.string().required().email(),
     message: yup.string().required().min(5).max(200),
   });
+
   const handleSubmitForm = (
     values: { name: string; email: string; message: string },
-    formikHelpers: FormikHelpers<ContactFormProps>
+    formikHelpers: FormikHelpers<ContactFormProps>,
   ) => {
-    console.log("Residam");
+    console.log("Residam", values);
+  };
+
+  const handleCopy = async (value: string) => {
+    await navigator.clipboard.writeText(value);
+    toast("Copy Successfully", { type: "success" });
   };
 
   return (
@@ -89,8 +96,66 @@ const ContactMe = () => {
           </Formik>
         </div>
         <div className="flex flex-col gap-4 flex-1">
-          <div className="glass p-8 rounded-3xl border border-primary/30 flex-1"></div>
-          <div className="glass p-8 rounded-3xl border border-primary/30 flex-1"></div>
+          <div className="glass p-8 rounded-3xl border border-primary/30 flex-1">
+            <p className="text-2xl">Contact Information</p>
+            <div className="flex flex-col gap-8 mt-8">
+              {[
+                {
+                  icon: Mail,
+                  title: "Email",
+                  action: "mailto",
+                  value: "r.ghahremani1991@gmail.com",
+                },
+                { title: "Phone", value: "+1 (647) 674 - 7807", icon: Phone, action: "tel" },
+                {
+                  icon: MapPin,
+                  disabled: true,
+                  title: "Location",
+                  value: "Toronto, Canada",
+                },
+              ].map((item, index) => (
+                <div key={item.title + index} className="flex gap-4 items-center">
+                  <div className="w-16 h-16 rounded bg-primary/10 flex items-center justify-center">
+                    <a href={`${item.action}:${item.value}`}>
+                      <item.icon className="text-primary" />
+                    </a>
+                  </div>
+                  <div className="flex flex-col gap-.5">
+                    <p className="text-muted-foreground">{item.title}</p>
+                    <div className="flex gap-2 items-center">
+                      <a href={`${item.action}:${item.value}`}>
+                        <p
+                          className={`text-lg ${!item.disabled && "hover:border-b hover:text-primary cursor-pointer duration-200"}`}>
+                          {item.value}
+                        </p>
+                      </a>
+                      <div className="flex items-center justify-center">
+                        {/* <div className="flex items-center justify-center bg-primary/10 p-1 rounded"> */}
+                        {!item.disabled && (
+                          <Copy
+                            size={14}
+                            className="text-primary cursor-pointer"
+                            onClick={() => handleCopy(item.value)}
+                          />
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* <div className="glass p-8 rounded-3xl  border border-primary/30 flex-1"></div> */}
+          <div className="glass rounded-3xl p-8 border border-primary/30">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+              <span className="font-medium">Currently Available</span>
+            </div>
+            <p className="text-muted-foreground text-sm">
+              I'm currently open to new opportunities and exciting projects. Whether you need a
+              full-time engineer or a freelance consultant, let's talk!
+            </p>
+          </div>
         </div>
       </div>
     </div>

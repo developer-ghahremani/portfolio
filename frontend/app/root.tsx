@@ -11,6 +11,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import { ToastContainer } from "react-toastify";
 import "./ReactToastify.css";
+import { CssBaseline, StyledEngineProvider } from "@mui/material";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
